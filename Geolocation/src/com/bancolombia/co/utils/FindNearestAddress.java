@@ -35,13 +35,13 @@ public class FindNearestAddress {
 				String testAddress = s.replace(" ", "+");
 
 				// Test Address:
-				//"CL 52a 33 2" - Result - CL 51 32 21,6.24301520672,-75.55393453712
-				//"Calle 45a #77-1" - Result - CL 45 77 51 APT 201,6.25114910327,-75.59628939298
+				//"CL 52a 33 2" - Result = CL 51 32 88,6.24361735413,-75.55442791838				   
+				//"Calle 44A #77-1" - Result = CL 44 A 77 11 AP 201,6.25054433204,-75.59583917526
 
 				/** Using Google services **/
 				GeoApiContext context = new GeoApiContext().setApiKey("AIzaSyANtnE6bbBwWwjyNR_5iX8QVOdnnGV-Mg0");
 				GeocodingResult[] results = GeocodingApi.geocode(context,
-						"Medellín,+Antioquia"+testAddress).await();
+						"MedellÃ­n,+Antioquia"+testAddress).await();
 
 				latitude = results[0].geometry.location.lat;
 				longitude = results[0].geometry.location.lng;
